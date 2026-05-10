@@ -20,12 +20,11 @@ import com.aizuda.snailjob.common.core.model.SnailJobRpcResult;
 import com.aizuda.snailjob.common.core.model.Result;
 import com.aizuda.snailjob.common.core.util.JsonUtil;
 import com.aizuda.snailjob.common.log.SnailJobLog;
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import org.springframework.util.ReflectionUtils;
+import tools.jackson.databind.JsonNode;
+import tools.jackson.databind.ObjectMapper;
 
 import java.lang.reflect.Method;
 import java.lang.reflect.Parameter;
@@ -125,7 +124,7 @@ public class SnailDispatcherRequestHandler {
     }
 
     public Object deSerialize(String infoStr, Method method,
-                              HttpRequest httpRequest, HttpResponse httpResponse) throws JsonProcessingException {
+                              HttpRequest httpRequest, HttpResponse httpResponse) {
 
         Type[] paramTypes = method.getGenericParameterTypes();
         Parameter[] parameters = method.getParameters();
