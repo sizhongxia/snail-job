@@ -2,6 +2,7 @@ server:
   port: 8080
   servlet:
     context-path: /snail-job
+
 spring:
   main:
     banner-mode: off
@@ -10,9 +11,9 @@ spring:
   datasource:
     name: snail_job
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://postgres:5432/klf_v2026?currentSchema=snail_job&useUnicode=true&characterEncoding=utf8&useSSL=true&autoReconnect=true&reWriteBatchedInserts=true
+    url: jdbc:postgresql://192.168.0.2:5432/aios_v2026?currentSchema=snail_job&useUnicode=true&characterEncoding=utf8&useSSL=true&autoReconnect=true&reWriteBatchedInserts=true
     username: postgres
-    password: postgres_123456
+    password: QZ1njfH40Om9UiWc
     type: com.zaxxer.hikari.HikariDataSource
     hikari:
       connection-timeout: 30000
@@ -25,6 +26,7 @@ spring:
   web:
     resources:
       static-locations: classpath:admin/
+
 mybatis-plus:
   typeAliasesPackage: com.aizuda.snailjob.template.datasource.persistence.po
   global-config:
@@ -36,8 +38,13 @@ mybatis-plus:
   configuration:
     map-underscore-to-camel-case: true
     cache-enabled: true
+
 logging:
   config: classpath:logback-boot.xml
+#    level:
+#    ## 方便调试 SQL
+#        com.aizuda.snailjob.template.datasource.persistence.mapper: debug
+
 snail-job:
   retry-pull-page-size: 1000 # 拉取重试数据的每批次的大小
   job-pull-page-size: 1000 # 拉取重试数据的每批次的大小
