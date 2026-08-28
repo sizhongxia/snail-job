@@ -10,9 +10,9 @@ spring:
   datasource:
     name: snail_job
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://127.0.0.1:5432/aios_v2026?currentSchema=snail_job&useUnicode=true&characterEncoding=utf8&useSSL=true&autoReconnect=true&reWriteBatchedInserts=true
+    url: jdbc:postgresql://postgres:5432/klf_v2026?currentSchema=snail_job&useUnicode=true&characterEncoding=utf8&useSSL=true&autoReconnect=true&reWriteBatchedInserts=true
     username: postgres
-    password: postgres
+    password: postgres_123456
     type: com.zaxxer.hikari.HikariDataSource
     hikari:
       connection-timeout: 30000
